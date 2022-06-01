@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_e/colors.dart';
+import 'package:shop_e/models/porduct.dart';
+import 'package:shop_e/providers/products_provider.dart';
 import 'package:shop_e/screens/cart_screen.dart';
 import 'package:shop_e/screens/profile_screen.dart';
 

@@ -28,10 +28,11 @@ class ProductItem extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Navigator.of(context).pushNamed(ProductDetails.routeName,arguments: id);
+              Navigator.of(context)
+                  .pushNamed(ProductDetails.routeName, arguments: id);
             },
             child: Container(
-              height: 210,
+              height: 180,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.network(
