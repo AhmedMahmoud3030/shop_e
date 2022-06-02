@@ -23,15 +23,15 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context)
-                  .pushNamed(ProductDetails.routeName, arguments: id);
-            },
-            child: Container(
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context)
+              .pushNamed(ProductDetails.routeName, arguments: id);
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
               height: 180,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
@@ -41,41 +41,43 @@ class ProductItem extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 6,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
+            SizedBox(
+              height: 6,
             ),
-          ),
-          SizedBox(
-            height: 6,
-          ),
-          Text(
-            desc,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              color: Colors.black54,
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 6,
-          ),
-          Text(
-            '$cost \$',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: Colors.green,
+            SizedBox(
+              height: 6,
             ),
-          )
-        ],
+            Text(
+              desc,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Colors.black54,
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Text(
+              '$cost \$',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.green,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
